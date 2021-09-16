@@ -5,7 +5,7 @@ public class Mentor extends Person{
 
     private static int counter = 1;
 
-    public Mentor(String firstName, String lastName, String userName, String password, Roller roller, int day) {
+    public Mentor(String firstName, String lastName, String userName, String password, Roller roller, int day) throws Exception {
         super(firstName, lastName, userName, password, roller);
         setDay(day);
         setId();
@@ -30,7 +30,13 @@ public class Mentor extends Person{
     @Override
     public String toString() {
         return "Mentor{" +
-                "day=" + day +
+                "id='" + id + '\'' +
+                ", firstName='" + getFirstName() + '\'' +
+                ", lastName='" + getLastName() + '\'' +
+                ", userName='" + getUserName() + '\'' +
+                ", password='" + getPassword() + '\'' +
+                ", roller=" + getRoller().getRollerNummer() +
+                ", day=" + day +
                 '}';
     }
 }

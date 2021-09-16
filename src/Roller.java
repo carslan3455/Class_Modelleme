@@ -8,4 +8,8 @@ public enum Roller {
     Roller(int rollerNummer) {
         this.rollerNummer = rollerNummer;
     }
+
+    public int getRollerNummer() {
+        return rollerNummer;
+    }
 }

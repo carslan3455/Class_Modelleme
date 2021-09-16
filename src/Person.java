@@ -6,7 +6,7 @@ public class Person {
     private String password;
     private Roller roller;
 
-    public Person(String firstName, String lastName, String userName, String password, Roller roller) {
+    public Person(String firstName, String lastName, String userName, String password, Roller roller) throws Exception {
         setFirstName(firstName);
         setLastName(lastName);
         setUserName(userName);
@@ -42,8 +42,15 @@ public class Person {
         return password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPassword(String password) throws Exception {
+        try {
+            if (password.length() >= 6) {
+                this.password = password;
+            }
+
+        } catch (Exception ex) {
+            throw new Exception("The password entered is too short");
+        }
     }
 
     public Roller getRoller() {

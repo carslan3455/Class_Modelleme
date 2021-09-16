@@ -5,7 +5,7 @@ public class Student extends Person {
 
     private static int counter = 1;
 
-    public Student(String firstName, String lastName, String userName, String password, Roller roller, int homeWork) {
+    public Student(String firstName, String lastName, String userName, String password, Roller roller, int homeWork) throws Exception {
         super(firstName, lastName, userName, password, roller);
         setHomeWork(homeWork);
         setId();
@@ -30,7 +30,13 @@ public class Student extends Person {
     @Override
     public String toString() {
         return "Student{" +
-                "homeWork=" + homeWork +
+                "id='" + id + '\'' +
+                ", firstName='" + getFirstName() + '\'' +
+                ", lastName='" + getLastName() + '\'' +
+                ", userName='" + getUserName() + '\'' +
+                ", password='" + getPassword() + '\'' +
+                ", roller=" + getRoller().getRollerNummer() +
+                ", homeWork=" + homeWork +
                 '}';
     }
 }
